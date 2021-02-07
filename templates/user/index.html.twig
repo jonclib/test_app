@@ -3,15 +3,18 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
+    <br>
+    <br>
+    <div class="col-6 offset-2">
     <h1>User index</h1>
 
-    <table class="table">
+    <table class="table table-striped" id="myTable">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Email</th>
                 <th>Roles</th>
-                <th>Password</th>
+               {#  <th>Password</th> #}
                 <th>First_name</th>
                 <th>Last_name</th>
                 <th>actions</th>
@@ -23,7 +26,7 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
+              {#   <td>{{ user.password }}</td> #}
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
                 <td>
@@ -40,4 +43,6 @@
     </table>
 
     <a href="{{ path('user_new') }}">Create new</a>
+
+    </div>
 {% endblock %}
